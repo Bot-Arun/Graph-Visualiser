@@ -116,7 +116,8 @@ function App() {
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   return (
     <div className="App bg-slate-800 h-screen text-cyan-400">
-      <header  className="App-header " >
+      <header  className="text-center App-header bg-red-300 " >
+        Graph Visualizer
         </header>
         {
           (isMobile) ?  <div className='text-[3rem] text-center flext '>Please use Desktop site</div> : <></>
