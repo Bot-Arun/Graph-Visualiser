@@ -16,7 +16,7 @@ function App() {
         let left = event.clientX;
         let top = event.clientY;
         var a = document.getElementById("Node"+dragNo);
-        let newArr = posObj[dragNo -1 ]=[left - a.offsetWidth/2,top - a.offsetHeight/2]
+        posObj[dragNo -1 ]=[left - a.offsetWidth/2,top - a.offsetHeight/2]
         setPosObj([...posObj]) ;
    
   }
@@ -48,13 +48,13 @@ function App() {
       setPosObj ([...posObj]) ;
   }
   const setColor = (val ) => {
+    let strok = []
     for (let i = 0  ; i < val.length -1  ; i++ ) {
       strok.push("" + val[i]+ val[i+1]) ;
       setStroke([...strok]);
     }
   }
   const dikstras = (v1,v2) => {
-    setStroke([...[]])
     var v1 = Number(document.getElementById("start-dist").value) ;
     var v2 = Number(document.getElementById("end-dist").value );
     var Matrix  = Array(vertices).fill(0)
@@ -94,7 +94,7 @@ function App() {
         var index2 ;
         for (let i = 0 ; i< vertices ; i++) {
           let x = distance[i] ;
-          if(minn > x[0] && boarr[x[1] -1] ^ boarr[i] ) {
+          if(minn > x[0] && boarr[x[1] -1] ^ boarr[i] ) { 
             minn = x[0] ;
             index1 = i ;
             index2 = x[1] -1 ;
@@ -116,7 +116,8 @@ function App() {
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   return (
     <div className="App bg-slate-800 h-screen text-cyan-400">
-      <header  className="App-header " >
+      <header  className="absolute w-full text-center App-header text-[3rem] pt-5 " >
+        Graph Visualizer
         </header>
         {
           (isMobile) ?  <div className='text-[3rem] text-center flext '>Please use Desktop site</div> : <></>
@@ -138,7 +139,7 @@ function App() {
       </div>
        {vertices ? <Node posObj = {posObj} onmousedown={(n)=> beginDrag(n)}></Node>: null }
         
-        <svg className="absol w-full h-full text-red-900">
+        <svg className=" w-full  text-red-900" style={{height:"100vh"}} >
           {noEdges ?  <Svg posObj={posObj} edges={edges} strok={strok}></Svg> : null}
         </svg>
       
