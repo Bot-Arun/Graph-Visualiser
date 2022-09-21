@@ -16,7 +16,7 @@ function App() {
         let left = event.clientX;
         let top = event.clientY;
         var a = document.getElementById("Node"+dragNo);
-        let newArr = posObj[dragNo -1 ]=[left - a.offsetWidth/2,top - a.offsetHeight/2]
+        posObj[dragNo -1 ]=[left - a.offsetWidth/2,top - a.offsetHeight/2]
         setPosObj([...posObj]) ;
    
   }
@@ -48,13 +48,13 @@ function App() {
       setPosObj ([...posObj]) ;
   }
   const setColor = (val ) => {
+    let strok = []
     for (let i = 0  ; i < val.length -1  ; i++ ) {
       strok.push("" + val[i]+ val[i+1]) ;
       setStroke([...strok]);
     }
   }
   const dikstras = (v1,v2) => {
-    setStroke([...[]])
     var v1 = Number(document.getElementById("start-dist").value) ;
     var v2 = Number(document.getElementById("end-dist").value );
     var Matrix  = Array(vertices).fill(0)
