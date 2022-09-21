@@ -94,7 +94,7 @@ function App() {
         var index2 ;
         for (let i = 0 ; i< vertices ; i++) {
           let x = distance[i] ;
-          if(minn > x[0] && boarr[x[1] -1] ^ boarr[i] ) {
+          if(minn > x[0] && boarr[x[1] -1] ^ boarr[i] ) { 
             minn = x[0] ;
             index1 = i ;
             index2 = x[1] -1 ;
@@ -116,7 +116,7 @@ function App() {
   var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   return (
     <div className="App bg-slate-800 h-screen text-cyan-400">
-      <header  className="text-center App-header bg-red-300 " >
+      <header  className="absolute w-full text-center App-header text-[3rem] pt-5 " >
         Graph Visualizer
         </header>
         {
@@ -139,7 +139,7 @@ function App() {
       </div>
        {vertices ? <Node posObj = {posObj} onmousedown={(n)=> beginDrag(n)}></Node>: null }
         
-        <svg className="absol w-full h-full text-red-900">
+        <svg className=" w-full  text-red-900" style={{height:"100vh"}} >
           {noEdges ?  <Svg posObj={posObj} edges={edges} strok={strok}></Svg> : null}
         </svg>
       
