@@ -43,7 +43,7 @@ function App() {
   }
   const createNode = () => {
 
-      posObj[vertices]= [200,200]
+      posObj[vertices]= [Math.random()*1500,Math.random()*800]
       setVertices (vertices+1)
       setPosObj ([...posObj]) ;
   }
